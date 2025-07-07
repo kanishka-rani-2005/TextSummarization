@@ -1,0 +1,29 @@
+# === Core NLP & Modeling ===
+transformers[sentencepiece]  # Pretrained models like BART, T5 + SentencePiece support
+datasets                     # HuggingFace datasets like CNN/DailyMail, XSum
+sentencepiece                # Tokenizer backend used by T5, mT5
+torch                        # Backend for PyTorch models
+nltk                         # Tokenization, sentence splitting, and ROUGE
+
+# === Utility & Preprocessing ===
+pandas                       # Data handling and preprocessing
+tqdm                         # Progress bars during training/inference
+PyYAML                       # Config file parsing (.yaml)
+python-box==6.0.2            # Dot notation access to dicts
+ensure==1.0.2                # Lightweight runtime assertions
+
+# === Visualization & Notebooks ===
+matplotlib                   # Plotting metrics/loss curves
+notebook                     # Run Jupyter notebooks
+
+py7zr                        # Extract `.7z` compressed datasets
+boto3                        # Access AWS S3 buckets (upload/download)
+
+sacrebleu                    # BLEU score evaluation
+
+fastapi>=0.103.0             # Modern async API framework (supports pydantic v2)
+uvicorn[standard]>=0.18.3    # ASGI server for running FastAPI
+Jinja2==3.1.2                # HTML templating for frontend (optional)
+
+# === Editable Local Module ===
+-e .                         # Install the current project in editable mode
