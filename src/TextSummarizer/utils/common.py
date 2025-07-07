@@ -1,15 +1,14 @@
 import os 
-from box.exceptions import BoxValueError
 import yaml
-from src.textSummarizer.logging import logger
-from ensure import ensure_annotations
+from src.TextSummarizer.logging import logger
+# from ensure import ensure_annotations
 from pathlib import Path
-from typing import Any, Dict, Union
-from box import Box, BoxList,ConfigBox
+from box import ConfigBox
+from typeguard import typechecked
 
 
 
-@ensure_annotations
+@typechecked
 def read_yaml(path_to_yaml:Path)->ConfigBox:
     """Reads a yaml file and returns a ConfigBox object.
     Args:
@@ -24,11 +23,12 @@ def read_yaml(path_to_yaml:Path)->ConfigBox:
             return ConfigBox(data)
     except FileNotFoundError as e:
         logger.error(f"YAML file {path_to_yaml} not found.")
+        raise e or  ConfigBox({})
     except Exception as e:
         logger.error(f"Error reading YAML file {path_to_yaml}: {e}")
+        raise e
 
-
-@ensure_annotations
+@typechecked
 def create_directories(path_to_directories:list,verbose=True):
     for path in path_to_directories:
         os.makedirs(path,exist_ok=True)
@@ -36,7 +36,7 @@ def create_directories(path_to_directories:list,verbose=True):
             logger.info(f"Created Directory at : {path}")
 
         
-@ensure_annotations
+@typechecked
 def get_size(path:Path)->str:
     size_in_kb=round(os.path.getsize(path)/1024)
     return f"{size_in_kb} KB"
