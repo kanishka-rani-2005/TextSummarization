@@ -2,7 +2,7 @@ from src.TextSummarizer.logging import logger
 from src.TextSummarizer.pipeline.stage1_data_ingestion_pipeline import DataIngestionPipeline
 from src.TextSummarizer.pipeline.stage2_data_validation_pipeline import DataValidationPipeline
 from src.TextSummarizer.pipeline.stage3_data_transformation import DataTransformationPipeline
-
+from src.TextSummarizer.pipeline.stage4_model_trainer import ModelTrainerPipeline
 
 
 if __name__ == "__main__":
@@ -36,4 +36,16 @@ if __name__ == "__main__":
     except Exception as e:
         print(f"An error occurred: {e}")
         raise e
+    
+    
 
+    try:
+        STAGE_NAME = "Model Training Stage"
+        logger.info(f">>>>>>> stage {STAGE_NAME} started <<<<<<<<")
+        model_trainer_pipeline = ModelTrainerPipeline()
+        model_trainer_pipeline.main()
+        logger.info(f">>>>>>> stage {STAGE_NAME} completed <<<<<<<<\n\nx==========x\n\n")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        raise e
+    
