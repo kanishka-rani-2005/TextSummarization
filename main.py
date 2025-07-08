@@ -29,10 +29,10 @@ if __name__ == "__main__":
 
     try:
         STAGE_NAME = "Data Transformation Stage"
-        print(f">>>>>>> stage {STAGE_NAME} started <<<<<<<<")
+        logger.info(f">>>>>>> stage {STAGE_NAME} started <<<<<<<<")
         data_transformation_pipeline = DataTransformationPipeline()
         data_transformation_pipeline.main()
-        print(f">>>>>>> stage {STAGE_NAME} completed <<<<<<<<\n\nx==========x\n\n")
+        logger.info(f">>>>>>> stage {STAGE_NAME} completed <<<<<<<<\n\nx==========x\n\n")
     except Exception as e:
         print(f"An error occurred: {e}")
         raise e
