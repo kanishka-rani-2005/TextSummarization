@@ -1,7 +1,7 @@
 
 from src.TextSummarizer.logging import logger
 from src.TextSummarizer.config.configuration import ConfigManager
-from src.TextSummarizer.config.configuration import DataValidationConfig
+from src.TextSummarizer.entity import DataValidationConfig
 import os
 
 class DataValidation:

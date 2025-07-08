@@ -8,7 +8,7 @@ import urllib.request as request
 from zipfile import ZipFile
 from dataclasses import dataclass
 from pathlib import Path
-from src.TextSummarizer.config.configuration import DataIngestionConfig
+from src.TextSummarizer.entity import DataIngestionConfig
 
 
 class DataIngestion:
