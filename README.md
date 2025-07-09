@@ -22,35 +22,65 @@ This project implements a Text Summarizer using Hugging Face Transformers. It fo
 
 TEXTSUMMARIZATION/
 ├── artifacts/                  # Stores intermediate pipeline outputs
-│   ├── data_ingestion/
+
+│   ├── data_ingestion/ 
+
 │   ├── data_transformation/
+
 │   ├── data_validation/
+
 │   ├── model_trainer/
+
 │   └── model_evaluation/
+
 ├── config/                    # Configuration files
+
 │   └── config.yaml
+
 ├── logs/                      # Logging files
+
 │   └── running_logs.log
+
 ├── params/                    # Model & pipeline parameters
+
 │   └── params.yaml
+
 ├── research/                  # Experiments and notebooks
+
 ├── src/TextSummarizer/       # Source code
+
 │   ├── components/           # Pipeline steps (data loader, trainer, etc.)
+
 │   ├── config/               # Configuration manager
+
 │   ├── constants/            # Project-wide constants
+
 │   ├── entity/               # Data classes for configuration entities
+
 │   ├── logging/              # Logging utility
+
 │   ├── pipeline/             # Pipeline runner scripts
+
 │   ├── utils/                # Utility functions
+
 │   └── __init__.py
+
 ├── venv/                      # Virtual environment
+
 ├── .gitignore
+
 ├── app.log
+
 ├── app.py                     # Optional FastAPI app or script
+
 ├── Dockerfile                 # For containerizing the application
+
 ├── main.py                    # Main entry point
+
 ├── README.md
+
 └── requirements.txt
+
 
 
 ## ⚙️ Setup Instructions
