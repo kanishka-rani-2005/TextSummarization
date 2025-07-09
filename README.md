@@ -155,7 +155,7 @@ docker run -it textsummarizer
 
 ~ Scalable and ready for deployment
 
-## ✍️ Authors
+## ✍️ Author
 
 Kanishka Rani - kanishka-rani-2005
 
