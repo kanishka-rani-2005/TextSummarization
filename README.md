@@ -12,3 +12,5 @@ Text summarization is a technique used to condense a large amount of text into a
 6. Update the pipeline
 7. Update main.py
 8. Update the app.py
+
+

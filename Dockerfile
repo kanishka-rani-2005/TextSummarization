@@ -1,4 +1,4 @@
-FROM python:3.8-slim-buster
+FROM python:3.11-slim-buster
 
 RUN apt update -y && apt install awscli -y
 WORKDIR /app
@@ -11,3 +11,4 @@ RUN pip uninstall -y transformers accelerate
 RUN pip install transformers accelerate
 
 CMD ["python3", "app.py"]
+
