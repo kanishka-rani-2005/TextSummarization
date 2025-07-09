@@ -7,7 +7,6 @@ from src.TextSummarizer.config.configuration import ModelTrainerConfig
 import os
 from src.TextSummarizer.logging import logger
 
-
 class ModelTrainer:
     def __init__(self,config:ModelTrainerConfig):
         self.config=config
@@ -16,9 +15,9 @@ class ModelTrainer:
         device='cuda' if torch.cuda.is_available() else 'cpu'
         print(device)
         tokenizer=AutoTokenizer.from_pretrained(self.config.model_ckpt)
-        model_pegasus=AutoModelForSeq2SeqLM.from_pretrained(self.config.model_ckpt)
+        model_t5=AutoModelForSeq2SeqLM.from_pretrained(self.config.model_ckpt)
 
-        seq2seq_data_collator=DataCollatorForSeq2Seq(tokenizer,model=model_pegasus)
+        seq2seq_data_collator=DataCollatorForSeq2Seq(tokenizer,model=model_t5)
 
         #loading data
         dataset_samsum_pt=load_from_disk(self.config.data_path)
@@ -41,7 +40,7 @@ class ModelTrainer:
         )
 
         trainer=Trainer(
-            model=model_pegasus,args=training_args,
+            model=model_t5,args=training_args,
             data_collator=seq2seq_data_collator,
             train_dataset=train_dataset_small,
             eval_dataset=eval_dataset_small
@@ -51,6 +50,6 @@ class ModelTrainer:
 
         trainer.train()
 
-        model_pegasus.save_pretrained(os.path.join(self.config.root_dir,'pegasus-samsum-model'))
+        model_t5.save_pretrained(os.path.join(self.config.root_dir,'t5-small-model'))
         tokenizer.save_pretrained(os.path.join(self.config.root_dir,'tokenizer'))
 
