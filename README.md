@@ -6,7 +6,7 @@
 This project implements a Text Summarizer using Hugging Face Transformers. It follows a modular pipeline architecture with distinct stages for ingestion, validation, transformation, model training, and evaluation.
 
 
-## Workflows
+## Workflow
 
 1. Update config.yaml
 2. Update params.yaml
@@ -86,7 +86,7 @@ TEXTSUMMARIZATION/
 ## ⚙️ Setup Instructions
 ✅ 1. Clone the Repository
 ``` bash
-git clone https://github.com/your-username/TextSummarization.git
+git clone https://github.com/kanishka-rani-2005/TextSummarization.git
 cd TextSummarization
 ```
 
